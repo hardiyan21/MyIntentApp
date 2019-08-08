@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button btnMoveActivity = findViewById(R.id.btn_move_activity);
         btnMoveActivity.setOnClickListener(this);
 
-        Button btnMoveWithDataActivity = findViewById(R.id,btnMoveActivity_data);
+        Button btnMoveWithDataActivity = findViewById(R.id.btn_move_activity_data);
         btnMoveWithDataActivity.setOnClickListener(this);
     }
 
@@ -30,6 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_move_activity_data:
+                Intent moveWithDataIntent = new Intent(MainActivity.this, MoveWithDataActivity.class);
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_NAME, "DicodingAcademy Boy");
+                moveWithDataIntent.putExtra(MoveWithDataActivity.EXTRA_AGE, 5);
+                startActivity(moveWithDataIntent);
                 break;
         }
     }
